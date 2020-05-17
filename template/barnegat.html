@@ -140,7 +140,7 @@
                     of a fluid below a pressure surface. Then, these 2D depth-averaged dynamic wave equations can be solved using a finite-volume numerical method, which is a method of solving partial differential equations. Basically, each node on the
                     mesh is assigned a volume, and then each term for the differential equation at this point is converted to an integral, which is then evaluated as a flux. This method is advantageous for this model, as it works easily for unstructured
                     meshes that may have some errors in its geometry (Hwang, 2013). The model treated the simulation as a steady state flow, where diffusion occurs at a constant rate over time. An unsteady state flow is more realistic; however, it comes
-                    at the cost of computational strain. As a result, to simplify the model and allow for easier implementation, a steady state flow simulation was conducted (Deissler, 1965). Finally, a wetting/drying algorithm was implemented in order
+                    at the cost of computational strain. As a result, to simplify the model and allow for easier implementation, a steady state flow simulation was conducted (Deissler, 1965). Additionally, a wetting/drying algorithm was implemented in order
                     to account for any errors made by the previous equations. This is because typically, older hydrodynamic models have treated the coast as a stable boundary that is unchanging. However, this is untrue, as the coast periodically changes
                     from wet to dry and back to wet as tides/waves change (Medeiros & Hagen, 2012). Finally, the model control parameters were set. The start time was set to 0 hours, time-step set to 5 seconds, and the end time was set to how long the
                     simulation should run. The simulation outputs a contour plot and vector field of the circulation of water in the system, where the length of the vector corresponds to the velocity of water flow at that point. The simulation outputs
@@ -186,7 +186,10 @@
                 <p class="lead">Dietrich, J., Kolar, R., & Luettich, R. (2004). Assessment of ADCIRC wetting and drying algorithm. Computational Methods in Water Resources: Volume 2, Proceedings of the XVth International Conference on Computational Methods in Water Resources
                     Developments in Water Science, 1767-1778. doi:10.1016/s0167-5648(04)80183-7
                 </p>
-                <p class="lead">Hwang, Y. (2013). A characteristic particle method for the Saint Venant equations. Computers & Fluids, 76, 58-72. doi:10.1016/j.compfluid.2013.01.027 IPCC. (2013). Near-term Climate Change: Projections and Predictability. Climate Change
+                <p class="lead">Hwang, Y. (2013). A characteristic particle method for the Saint Venant equations. Computers & Fluids, 76, 58-72. doi:10.1016/j.compfluid.2013.01.027 IPCC. (2013). 
+                   </p>
+                <p class="lead"> 
+                    Near-term Climate Change: Projections and Predictability. Climate Change
                     2013 - The Physical Science Basis, 953-1028. doi:10.1017/cbo9781107415324.023
                 </p>
                 <p class="lead">Kennish, M. J., Bricker, S. B., Dennison, W. C., Glibert, P. M., Livingston, R. J., Moore, K. A., .. . Valiela, I. (2007). Barnegat Bay–Little Egg Harbor Estuary: Case Study Of A Highly Eutrophic Coastal Bay System. Ecological Applications,
