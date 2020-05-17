@@ -74,69 +74,99 @@
                 </center>
 
                 <hr>
-                
-                <p class="lead">During the summer of 2018, I had the opportunity to work with Professor Katie Gatto and a team of four others to create a virtual reality simulation of Barnegat Bay eutrophication. Programming in C# on Unity 4.7, we designed a VR program for the Oculus Rift and Google Daydream to educate others regarding the impacts of pollution on marine life. Due to the funding of the project, I am unable to release any code or images of the project itself.</p>
-                
-               
 
-<hr>
+                <p class="lead">During the summer of 2018, I had the opportunity to work with Professor Katie Gatto and a team of four others to create a virtual reality simulation of Barnegat Bay eutrophication. Programming in C# on Unity 4.7, we designed a VR program
+                    for the Oculus Rift and Google Daydream to educate others regarding the impacts of pollution on marine life. Due to the funding of the project, I am unable to release any code or images of the project itself.</p>
+
+
+
+                <hr>
 
 
 
                 <h2 class="my-4"><small>Abstract</small> </h2>
-                
+
                 <img class="img-fluid rounded mb-3 mb-md-0" src="https://i.imgur.com/GwRfmkX.png" alt="">
 
-                
+
                 <hr>
 
 
 
                 <h2 class="my-4"><small>Methodology</small> </h2>
-                
+
                 <h4 class="my-4"><small><i>Preparation and World Design</i></small> </h4>
-                
-                <p class="lead">The team began work on the simulation by thoroughly researching several water quality parameters. The group studied the Barnegat Bay, gathering data from different parts of the bay at each month throughout the year. Once sufficient data was gathered, the team began work on the virtual simulation using Unity 4.7 and scripts coded in C#. An environment was created using a terrain generator and modeled to depict a generalized bay floor. Different rock and grass models were placed throughout to further enhance the topology of the benthic environment.
-The controls were designed where the user can move in the environment and look around using the Oculus Rift and Google Daydream headsets. A timer was created to keep track of how much time has passed in the simulation. Every month in-game corresponds to 30 seconds in real-time, and the current month was displayed at the top of the screen and changed depending on the current month of the simulation. This time would be used to determine appropriate parameters and species for that time of year.
-</p>
-                
+
+                <p class="lead">The team began work on the simulation by thoroughly researching several water quality parameters. The group studied the Barnegat Bay, gathering data from different parts of the bay at each month throughout the year. Once sufficient data
+                    was gathered, the team began work on the virtual simulation using Unity 4.7 and scripts coded in C#. An environment was created using a terrain generator and modeled to depict a generalized bay floor. Different rock and grass models
+                    were placed throughout to further enhance the topology of the benthic environment. The controls were designed where the user can move in the environment and look around using the Oculus Rift and Google Daydream headsets. A timer was
+                    created to keep track of how much time has passed in the simulation. Every month in-game corresponds to 30 seconds in real-time, and the current month was displayed at the top of the screen and changed depending on the current month
+                    of the simulation. This time would be used to determine appropriate parameters and species for that time of year.
+                </p>
+
                 <h4 class="my-4"><small><i>Parameters</i></small> </h4>
-                
-                <p class="lead">Based on the gathered data, methods were created for each parameter. Temperature was calculated as a random range between the record high and record low temperatures of the bay. Precipitation was calculated in the same manner. Runoff was calculated by finding the runoff coefficient of each part of the bay, determined from the percentage of impervious surfaces in that area. The precipitation was then multiplied by that coefficient to get the amount of runoff in the system. From the calculated runoff, turbidity was calculated by using the average turbidity of each portion of the bay and adding that to the turbidity coefficient multiplied by runoff. Nutrient levels (from chemicals containing nitrogen and phosphorous) were calculated by using a random range of collected nutrients and multiplying that by the runoff coefficient. Then, the chlorophyll level of the system was calculated by using gathered data coupled with the calculated temperature and nutrient levels. The chlorophyll concentration was categorized by six levels of severity, where an algae level of 1 corresponds to a healthy system, and an algae level of 6 corresponds to an acute algal bloom. Depending on the algae level, the dissolved oxygen was determined from gathered data. All of these values were calculated for each simulated month. In order to make the data continuous rather than discrete, the team employed a spline fit algorithm, which interpolates all of the calculated data each time the simulation begins. The spline fit curve then generates values for each second of the simulation, giving a more realistic depiction of how parameters change throughout the year.</p>
-                
+
+                <p class="lead">Based on the gathered data, methods were created for each parameter. Temperature was calculated as a random range between the record high and record low temperatures of the bay. Precipitation was calculated in the same manner. Runoff was
+                    calculated by finding the runoff coefficient of each part of the bay, determined from the percentage of impervious surfaces in that area. The precipitation was then multiplied by that coefficient to get the amount of runoff in the
+                    system. From the calculated runoff, turbidity was calculated by using the average turbidity of each portion of the bay and adding that to the turbidity coefficient multiplied by runoff. Nutrient levels (from chemicals containing nitrogen
+                    and phosphorous) were calculated by using a random range of collected nutrients and multiplying that by the runoff coefficient. Then, the chlorophyll level of the system was calculated by using gathered data coupled with the calculated
+                    temperature and nutrient levels. The chlorophyll concentration was categorized by six levels of severity, where an algae level of 1 corresponds to a healthy system, and an algae level of 6 corresponds to an acute algal bloom. Depending
+                    on the algae level, the dissolved oxygen was determined from gathered data. All of these values were calculated for each simulated month. In order to make the data continuous rather than discrete, the team employed a spline fit algorithm,
+                    which interpolates all of the calculated data each time the simulation begins. The spline fit curve then generates values for each second of the simulation, giving a more realistic depiction of how parameters change throughout the
+                    year.</p>
+
                 <h4 class="my-4"><small><i>Ambient System</i></small> </h4>
-                
-                <p class="lead">Algae and turbidity were depicted using two Unity particle systems and fog. As the integer value of algae level increased, the amount of particles and fog increased as well. This represented algae in the water system, and when the integer level reached a 5 or 6, then the water would be in a severe state and the particles would depict a large brown-tide algal bloom. The light levels in the water system would also decrease to show an increase in turbidity.
-</p>
-                
+
+                <p class="lead">Algae and turbidity were depicted using two Unity particle systems and fog. As the integer value of algae level increased, the amount of particles and fog increased as well. This represented algae in the water system, and when the integer
+                    level reached a 5 or 6, then the water would be in a severe state and the particles would depict a large brown-tide algal bloom. The light levels in the water system would also decrease to show an increase in turbidity.
+                </p>
+
                 <h4 class="my-4"><small><i>User Interface</i></small> </h4>
-                
-                <p class="lead">The User Interface, or UI, was designed to allow the user to pick which part of the bay they would like to simulate, as well as change several settings in the opening screen. Once they choose a location and are placed into the bay, each parameter is displayed using radial progress bars in real-time. This allows the user to see how parameters are changing in relation to their relative maximum and minimum. The team also added a settings button, where the user can click to access different functions, such as converting Celsius to Fahrenheit and centimeters to inches. Once the simulation ends after 360 seconds, the user then enters a “Parameter Editor” mode. In this mode, the user is able to move sliders in the settings to manually adjust certain parameters to observe different scenarios of the simulation. Alerts were created to be displayed for different scenarios, such as dangerous dissolved oxygen levels. A custom informational screen for each species was also designed to be displayed to the user when they interact with them.
-</p>
+
+                <p class="lead">The User Interface, or UI, was designed to allow the user to pick which part of the bay they would like to simulate, as well as change several settings in the opening screen. Once they choose a location and are placed into the bay, each
+                    parameter is displayed using radial progress bars in real-time. This allows the user to see how parameters are changing in relation to their relative maximum and minimum. The team also added a settings button, where the user can click
+                    to access different functions, such as converting Celsius to Fahrenheit and centimeters to inches. Once the simulation ends after 360 seconds, the user then enters a “Parameter Editor” mode. In this mode, the user is able to move sliders
+                    in the settings to manually adjust certain parameters to observe different scenarios of the simulation. Alerts were created to be displayed for different scenarios, such as dangerous dissolved oxygen levels. A custom informational
+                    screen for each species was also designed to be displayed to the user when they interact with them.
+                </p>
                 <h4 class="my-4"><small><i>Fish Artificial Intelligence</i></small> </h4>
-                
-                <p class="lead">For the species present in the simulation, marine life models from the Unity asset store were gathered and inputted into the simulation. In order to realistically portray fish artificial intelligence, the team focused on four aspects: movement, schooling behavior, death, and leaving tendencies. Movement was accomplished by randomly generating fish depending on the time of year they are in the bay. Once they spawn, they randomly generate target locations and change their movement vectors accordingly. The movement happens in accordance to their swimming animation from their prefabbed models. This method produced fish that move independently, which is not characteristic of several schooling fish such as the weakfish and bluefish. As a result, the team applied a “flocking” algorithm in which several fish would designate a single fish in the center as the main fish, and change their movement vectors to be parallel to that of the main fish. This method produced fish that school in a accurate manner. For fish that do not move in a traditional manner, such as flounders, their movement was restricted to the bottom of the bay to represent their benthic behavior. In order to determine whether a fish dies or “leaves” the system, the fish had to react to a low dissolved oxygen or extreme temperatures depending on their tolerance ranges. A normal cumulative distribution was calculated depending on the average dissolved oxygen levels of the system and current dissolved oxygen levels. This calculated probability was compared to the normal cumulative distribution calculated for the dissolved oxygen range for each species. The difference between these probabilities determined the chance of each fish leaving the system and was iterated every 5 seconds. If the method returned true, then the fish target location for that individual model was set for the Atlantic ocean in the simulation. The same method was employed for the fish dying, except that the rate of change between the dissolved oxygen was taken into account. If the dissolved oxygen levels stooped below the tolerance range and had a largely negative slope, the probability that a fish would die increases greatly. This mimics real-life, where a sharp drop in dissolved oxygen could cause large fish kills. 
-</p>
+
+                <p class="lead">For the species present in the simulation, marine life models from the Unity asset store were gathered and inputted into the simulation. In order to realistically portray fish artificial intelligence, the team focused on four aspects:
+                    movement, schooling behavior, death, and leaving tendencies. Movement was accomplished by randomly generating fish depending on the time of year they are in the bay. Once they spawn, they randomly generate target locations and change
+                    their movement vectors accordingly. The movement happens in accordance to their swimming animation from their prefabbed models. This method produced fish that move independently, which is not characteristic of several schooling fish
+                    such as the weakfish and bluefish. As a result, the team applied a “flocking” algorithm in which several fish would designate a single fish in the center as the main fish, and change their movement vectors to be parallel to that of
+                    the main fish. This method produced fish that school in a accurate manner. For fish that do not move in a traditional manner, such as flounders, their movement was restricted to the bottom of the bay to represent their benthic behavior.
+                    In order to determine whether a fish dies or “leaves” the system, the fish had to react to a low dissolved oxygen or extreme temperatures depending on their tolerance ranges. A normal cumulative distribution was calculated depending
+                    on the average dissolved oxygen levels of the system and current dissolved oxygen levels. This calculated probability was compared to the normal cumulative distribution calculated for the dissolved oxygen range for each species. The
+                    difference between these probabilities determined the chance of each fish leaving the system and was iterated every 5 seconds. If the method returned true, then the fish target location for that individual model was set for the Atlantic
+                    ocean in the simulation. The same method was employed for the fish dying, except that the rate of change between the dissolved oxygen was taken into account. If the dissolved oxygen levels stooped below the tolerance range and had
+                    a largely negative slope, the probability that a fish would die increases greatly. This mimics real-life, where a sharp drop in dissolved oxygen could cause large fish kills.
+                </p>
                 <h4 class="my-4"><small><i>Finalization and Integration</i></small> </h4>
-                
-                <p class="lead">The simulation was then refined and maximized for user interaction. Music, audio narration, and instructions were incorporated throughout the simulation. Other organisms, such as clams, mussels, widgeon grass, and eelgrass were added to introduce a diverse set of life in the Barnegat Bay. The simulation was integrated into virtual reality through the Oculus Rift and Google Daydream. Raycasting was used to allow the user to select options on the screen and interact with fish in the environment. Once everything was integrated, the team debugged the simulation and finalized for use.
-</p>
-                
+
+                <p class="lead">The simulation was then refined and maximized for user interaction. Music, audio narration, and instructions were incorporated throughout the simulation. Other organisms, such as clams, mussels, widgeon grass, and eelgrass were added to
+                    introduce a diverse set of life in the Barnegat Bay. The simulation was integrated into virtual reality through the Oculus Rift and Google Daydream. Raycasting was used to allow the user to select options on the screen and interact
+                    with fish in the environment. Once everything was integrated, the team debugged the simulation and finalized for use.
+                </p>
+
                 <hr>
 
 
 
                 <h2 class="my-4"><small>Results</small> </h2>
-                
-    
 
-                <p class="lead">The virtual reality simulation presents the Barnegat Bay and what happens to the estuarine ecosystem during the year. This allows the user to observe possible scenarios and how certain parameters impact one another. Not only that, but the positive impacts of best management practices were also modeled, in hopes of showing community members how they can help to mitigate risks in the bay. Depicting scientific data in a comprehensible manner is vital for ensuring that people are aware of problems in their communities. The simulation can be utilized to immerse high school classrooms and community organizations into the ecosystem of the Barnegat Bay, allowing them to witness and understand complex interactions. The simulation can serve as an educational tool, as well as a call-to-action for people to help reduce these problems of eutrophication and low water quality in the bay.
 
-</p>
+
+                <p class="lead">The virtual reality simulation presents the Barnegat Bay and what happens to the estuarine ecosystem during the year. This allows the user to observe possible scenarios and how certain parameters impact one another. Not only that, but
+                    the positive impacts of best management practices were also modeled, in hopes of showing community members how they can help to mitigate risks in the bay. Depicting scientific data in a comprehensible manner is vital for ensuring that
+                    people are aware of problems in their communities. The simulation can be utilized to immerse high school classrooms and community organizations into the ecosystem of the Barnegat Bay, allowing them to witness and understand complex
+                    interactions. The simulation can serve as an educational tool, as well as a call-to-action for people to help reduce these problems of eutrophication and low water quality in the bay.
+
+                </p>
                 <hr>
                 <img class="img-fluid rounded mb-3 mb-md-0" src="https://i.imgur.com/fIHNnJu.jpg" alt="">
 
-            
+
 
 
                 <footer>
